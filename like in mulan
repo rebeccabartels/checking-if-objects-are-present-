@@ -1,0 +1,23 @@
+stage.set_background("city")
+
+sprite = codesters.Sprite("person1", -50, -160)
+
+my_class = ["Ken ", "Mark ", "Sandy ", "Sabrina"]
+class_display = codesters.Display(my_class, 0, 200)
+in_class = " "
+current_class = codesters.Display(in_class, 0, 50)
+
+sprite.say("I'm gonna take attendance!")
+stage.wait(3)
+
+for student in my_class:
+    
+    sprite.say(student + " is here today!")
+    in_class += student
+    current_class.update(in_class)
+    stage.wait(3)
+    sprite.say("Now the attendance list says: " + in_class)
+    stage.wait(3)
+
+    
+sprite.say(in_class + " are all in class today.")
